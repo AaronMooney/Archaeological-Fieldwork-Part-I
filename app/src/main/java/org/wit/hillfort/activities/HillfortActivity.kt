@@ -3,6 +3,7 @@ package org.wit.hillfort.activities
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v4.app.NavUtils
 import android.support.v7.widget.GridLayoutManager
 import android.view.Menu
 import android.view.MenuItem
@@ -32,6 +33,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger, ImageListener {
         app = application as MainApp
         toolbarAdd.title = title
         setSupportActionBar(toolbarAdd)
+        getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
 
         val layoutManager = GridLayoutManager(this,2)
         imageGallery.layoutManager = layoutManager
@@ -91,6 +93,10 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger, ImageListener {
             R.id.item_delete -> {
                 app.hillforts.delete(hillfort.copy())
                 finish()
+            }
+            android.R.id.home -> {
+                NavUtils.navigateUpFromSameTask(this)
+                return true
             }
         }
         return super.onOptionsItemSelected(item)
