@@ -10,6 +10,7 @@ import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
 import org.jetbrains.anko.toast
 import org.wit.hillfort.R
+import org.wit.hillfort.helpers.hashString
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
 
@@ -43,6 +44,10 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener{
                 setResult(AppCompatActivity.RESULT_OK)
                 toast(R.string.logged_out)
                 finish()
+            }
+
+            R.id.item_settings -> {
+                startActivityForResult<SettingsActivity>(0)
             }
         }
         return super.onOptionsItemSelected(item)

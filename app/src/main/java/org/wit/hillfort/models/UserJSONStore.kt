@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
 import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
 import org.wit.hillfort.helpers.*
 import java.util.*
 
@@ -35,6 +36,7 @@ class UserJSONStore : UserStore, AnkoLogger {
     }
 
     override fun updateUser(user: UserModel){
+        info("updating")
         var foundUser: UserModel? = users.find { u -> u.id == user.id}
         if (foundUser != null){
             foundUser.name = user.name

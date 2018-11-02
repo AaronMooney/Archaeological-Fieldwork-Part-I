@@ -32,7 +32,7 @@ class UserWelcomeActivity : AppCompatActivity(){
         val email = userEmailLogin.text.toString()
         val password = hashString(userPasswordLogin.text.toString())
 
-        var userExists: UserModel
+        var userExists = UserModel()
         var userFound = false
 
         app.users.getUsers().forEach{
@@ -49,6 +49,7 @@ class UserWelcomeActivity : AppCompatActivity(){
 
         clear()
         toast(R.string.login_success)
+        app.currentUser = userExists
         startActivityForResult(intentFor<HillfortListActivity>(), 0)
     }
 

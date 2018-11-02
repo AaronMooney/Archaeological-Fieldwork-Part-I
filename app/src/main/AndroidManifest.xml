@@ -33,6 +33,9 @@
         </activity>
         <activity android:name=".activities.UserSignupActivity">
         </activity>
+        <activity android:name=".activities.SettingsActivity"
+                  android:parentActivityName=".activities.HillfortListActivity">
+        </activity>
 
         <meta-data
                 android:name="com.google.android.geo.API_KEY"
