@@ -18,8 +18,6 @@ class SplashActivity : AppCompatActivity() {
                 try {
                     Thread.sleep(5000)
 
-//                    val intent = Intent(baseContext, HillfortListActivity::class.java)
-//                    startActivity(intent)
                     startActivityForResult(intentFor<UserWelcomeActivity>(),0)
                 } catch (e: Exception){
                     e.printStackTrace()

@@ -26,4 +26,6 @@
     <string name="error_login">Email or Password incorrect</string>
     <string name="login_success">Login Successful</string>
     <string name="signup_success">Signup Successful</string>
+    <string name="menu_logout">Logout</string>
+    <string name="logged_out">You have been logged out</string>
 </resources>
