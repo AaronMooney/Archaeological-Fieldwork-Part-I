@@ -3,6 +3,7 @@ package org.wit.hillfort.activities
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import org.jetbrains.anko.intentFor
 import org.wit.hillfort.R
 import java.lang.Exception
 
@@ -17,8 +18,9 @@ class SplashActivity : AppCompatActivity() {
                 try {
                     Thread.sleep(5000)
 
-                    val intent = Intent(baseContext, HillfortListActivity::class.java)
-                    startActivity(intent)
+//                    val intent = Intent(baseContext, HillfortListActivity::class.java)
+//                    startActivity(intent)
+                    startActivityForResult(intentFor<UserWelcomeActivity>(),0)
                 } catch (e: Exception){
                     e.printStackTrace()
                 }

@@ -32,7 +32,9 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
         fun bind(hillfort: HillfortModel,  listener : HillfortListener) {
             itemView.hillfortName.text = hillfort.name
             itemView.description.text = hillfort.description
-            itemView.imageIcon.setImageBitmap((readImageFromPath(itemView.context, hillfort.images.first())))
+            if (hillfort.images.isNotEmpty()) {
+                itemView.imageIcon.setImageBitmap((readImageFromPath(itemView.context, hillfort.images.first())))
+            }
             itemView.setOnClickListener { listener.onHillfortClick(hillfort) }
         }
     }

@@ -29,6 +29,10 @@
         <activity android:name=".activities.ImageActivity"
                   android:parentActivityName=".activities.HillfortActivity">
         </activity>
+        <activity android:name=".activities.UserWelcomeActivity">
+        </activity>
+        <activity android:name=".activities.UserSignupActivity">
+        </activity>
 
         <meta-data
                 android:name="com.google.android.geo.API_KEY"
