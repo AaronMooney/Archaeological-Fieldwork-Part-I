@@ -59,9 +59,10 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger, ImageListener {
                 toast(R.string.enter_hillfort_Name)
             } else {
                 if (edit) {
-                    app.hillforts.update(hillfort.copy())
+                    app.users.updateUser(app.currentUser.copy(), hillfort)
                 } else {
-                    app.hillforts.create(hillfort.copy())
+                    app.currentUser.hillforts.add(hillfort.copy())
+                    app.users.updateUser(app.currentUser.copy(), hillfort)
                 }
             }
             info("add Button Pressed: $hillfortName")
@@ -107,7 +108,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger, ImageListener {
                 finish()
             }
             R.id.item_delete -> {
-                app.hillforts.delete(hillfort.copy())
+                app.users.deleteHillfort(app.currentUser,hillfort.copy())
                 finish()
             }
             android.R.id.home -> {

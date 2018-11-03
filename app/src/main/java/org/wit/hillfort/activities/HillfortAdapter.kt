@@ -53,11 +53,11 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
                     val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
                     val formatDateTime = now.format(formatter)
                     hillfort.dateVisited = java.sql.Timestamp.valueOf(formatDateTime)
-                    app.hillforts.update(hillfort)
+                    app.users.updateUser(app.currentUser.copy())
                 } else {
                     hillfort.visited = false
                     app.numHillfortsVisited --
-                    app.hillforts.update(hillfort)
+                    app.users.updateUser(app.currentUser.copy())
                 }
             }
             itemView.setOnClickListener { listener.onHillfortClick(hillfort) }

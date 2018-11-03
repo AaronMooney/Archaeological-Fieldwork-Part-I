@@ -38,7 +38,7 @@ class SettingsActivity: AppCompatActivity(), AnkoLogger {
 
         val userName = java.lang.String.format(resources.getString(R.string.current_user), app.currentUser.name)
         val userEmail = java.lang.String.format(resources.getString(R.string.current_user_email), app.currentUser.email)
-        val totalHillfortsText = java.lang.String.format(resources.getString(R.string.total_hillforts), app.hillforts.findAll().size.toString())
+        val totalHillfortsText = java.lang.String.format(resources.getString(R.string.total_hillforts), app.currentUser.hillforts.size.toString())
         val numHillfortsVisitedText = java.lang.String.format(resources.getString(R.string.number_visited), app.numHillfortsVisited.toString())
 
         currentUserName.text = userName.replace("%","")
