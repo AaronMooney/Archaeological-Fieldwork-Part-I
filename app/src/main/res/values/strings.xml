@@ -36,4 +36,6 @@
     <string name="password_change_success">Password changed successfully</string>
     <string name="current_user" formatted="true">Current User: %1$s%%</string>
     <string name="current_user_email" formatted="true">Email: %1$s%%</string>
+    <string name="total_hillforts" formatted="true">Total Hillforts: %1$s%%</string>
+    <string name="number_visited" formatted="true">Number of Hillforts visited: %1$s%%</string>
 </resources>

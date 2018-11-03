@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.*
+import android.widget.CheckBox
 import kotlinx.android.synthetic.main.activity_hillfort_list.*
 import org.jetbrains.anko.intentFor
 import org.jetbrains.anko.startActivityForResult
@@ -67,7 +68,7 @@ class HillfortListActivity : AppCompatActivity(), HillfortListener{
     }
 
     fun showHillforts (hillforts: List<HillfortModel>) {
-        recyclerView.adapter = HillfortAdapter(hillforts, this)
+        recyclerView.adapter = HillfortAdapter(hillforts, this, app)
         recyclerView.adapter?.notifyDataSetChanged()
     }
 }

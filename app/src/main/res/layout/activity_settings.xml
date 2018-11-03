@@ -37,6 +37,14 @@
                 android:id="@+id/currentUserEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/totalHillforts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/numHillfortsVisited"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
 
         <Button
                 android:id="@+id/btnChangePassword"

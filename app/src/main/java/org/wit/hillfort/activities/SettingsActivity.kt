@@ -33,12 +33,18 @@ class SettingsActivity: AppCompatActivity(), AnkoLogger {
 
         val currentUserName :TextView = findViewById(R.id.currentUser)
         val currentUserEmail: TextView = findViewById(R.id.currentUserEmail)
+        val totalHillforts :TextView = findViewById(R.id.totalHillforts)
+        val numHillfortsVisited: TextView = findViewById(R.id.numHillfortsVisited)
 
         val userName = java.lang.String.format(resources.getString(R.string.current_user), app.currentUser.name)
         val userEmail = java.lang.String.format(resources.getString(R.string.current_user_email), app.currentUser.email)
+        val totalHillfortsText = java.lang.String.format(resources.getString(R.string.total_hillforts), app.hillforts.findAll().size.toString())
+        val numHillfortsVisitedText = java.lang.String.format(resources.getString(R.string.number_visited), app.numHillfortsVisited.toString())
 
         currentUserName.text = userName.replace("%","")
         currentUserEmail.text = userEmail.replace("%", "")
+        totalHillforts.text = totalHillfortsText.replace("%", "")
+        numHillfortsVisited.text = numHillfortsVisitedText.replace("%", "")
         btnChangePassword.setOnClickListener {
             showDialog(contentView!!)
         }
@@ -69,7 +75,7 @@ class SettingsActivity: AppCompatActivity(), AnkoLogger {
     fun showDialog(view: View) {
         val builder = AlertDialog.Builder(this)
         val inflater = layoutInflater
-        builder.setTitle("Change Password")
+        builder.setTitle(R.string.settings_change_password)
         val dialogLayout = inflater.inflate(R.layout.dialog_settings, null)
         val newUserPass  = dialogLayout.findViewById<EditText>(R.id.newUserPassword)
         val newUserPassConfirm  = dialogLayout.findViewById<EditText>(R.id.newConfirmUserPassword)
