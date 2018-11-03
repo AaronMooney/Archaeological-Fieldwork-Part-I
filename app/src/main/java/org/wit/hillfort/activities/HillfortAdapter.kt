@@ -1,5 +1,7 @@
 package org.wit.hillfort.activities
 
+import android.annotation.TargetApi
+import android.os.Build
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +13,8 @@ import org.wit.hillfort.R
 import org.wit.hillfort.helpers.readImageFromPath
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 interface HillfortListener {
     fun onHillfortClick(hillfort: HillfortModel)
@@ -32,7 +36,8 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
 
     class MainHolder constructor(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(hillfort: HillfortModel,  listener : HillfortListener, app:MainApp) {
+        @TargetApi(Build.VERSION_CODES.O)
+        fun bind(hillfort: HillfortModel, listener : HillfortListener, app:MainApp) {
             itemView.hillfortName.text = hillfort.name
             itemView.description.text = hillfort.description
             if (hillfort.images.isNotEmpty()) {
@@ -44,6 +49,10 @@ class HillfortAdapter constructor(private var hillforts: List<HillfortModel>,
                 if (checkBox.isChecked){
                     hillfort.visited = true
                     app.numHillfortsVisited ++
+                    val now: LocalDateTime = LocalDateTime.now()
+                    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+                    val formatDateTime = now.format(formatter)
+                    hillfort.dateVisited = java.sql.Timestamp.valueOf(formatDateTime)
                     app.hillforts.update(hillfort)
                 } else {
                     hillfort.visited = false

@@ -7,6 +7,7 @@ import android.support.v4.app.NavUtils
 import android.support.v7.widget.GridLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_hillfort.*
 import org.jetbrains.anko.AnkoLogger
 import org.jetbrains.anko.info
@@ -17,6 +18,7 @@ import org.wit.hillfort.helpers.showImagePicker
 import org.wit.hillfort.main.MainApp
 import org.wit.hillfort.models.HillfortModel
 import org.wit.hillfort.models.Location
+import java.util.*
 
 class HillfortActivity : AppCompatActivity(), AnkoLogger, ImageListener {
 
@@ -43,6 +45,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger, ImageListener {
             hillfort = intent.extras.getParcelable<HillfortModel>("hillfort_edit")
             hillfortName.setText(hillfort.name)
             description.setText(hillfort.description)
+            additionalNotes.setText(hillfort.notes)
             btnAdd.setText(R.string.save_hillfort)
         }
 
@@ -51,6 +54,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger, ImageListener {
         btnAdd.setOnClickListener {
             hillfort.name = hillfortName.text.toString()
             hillfort.description = description.text.toString()
+            hillfort.notes = additionalNotes.text.toString()
             if (hillfort.name.isEmpty()) {
                 toast(R.string.enter_hillfort_Name)
             } else {
@@ -77,6 +81,18 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger, ImageListener {
                 location.zoom = hillfort.zoom
             }
             startActivityForResult(intentFor<MapsActivity>().putExtra("location", location), LOCATION_REQUEST)
+        }
+
+        val dateVisited : TextView = findViewById(R.id.dateVisited)
+        val descriptionContent : TextView = findViewById(R.id.descriptionContent)
+        val additionalNotes : TextView = findViewById(R.id.additionalNotesContent)
+
+        val dateVisitedText = java.lang.String.format(resources.getString(R.string.date_visited), hillfort.dateVisited)
+        descriptionContent.text = hillfort.description
+        additionalNotes.text = hillfort.notes
+
+        if (hillfort.dateVisited != Date(0)) {
+            dateVisited.text = dateVisitedText.replace("%", "")
         }
     }
 

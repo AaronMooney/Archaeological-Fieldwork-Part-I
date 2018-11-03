@@ -17,6 +17,7 @@
     <string name="hint_userEmail">Email</string>
     <string name="hint_userPassword">Password</string>
     <string name="hint_confirmUserPassword">Confirm Password</string>
+    <string name="hint_hillfort_additional_notes">Additional Notes</string>
     <string name="button_login">Login</string>
     <string name="button_signup">Sign Up</string>
     <string name="error_signup_name">Name must not be empty</string>
@@ -38,4 +39,5 @@
     <string name="current_user_email" formatted="true">Email: %1$s%%</string>
     <string name="total_hillforts" formatted="true">Total Hillforts: %1$s%%</string>
     <string name="number_visited" formatted="true">Number of Hillforts visited: %1$s%%</string>
+    <string name="date_visited" formatted="true">Last Visited: %1$s%%</string>
 </resources>

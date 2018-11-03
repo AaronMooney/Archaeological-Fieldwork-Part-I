@@ -38,6 +38,11 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                <TextView
+                        android:id="@+id/dateVisited"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
                 <android.support.design.widget.TextInputEditText
                         android:id="@+id/hillfortName"
                         android:layout_width="match_parent"
@@ -63,6 +68,11 @@
                         android:padding="8dp"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="14sp"/>
+
+                <TextView
+                        android:id="@+id/descriptionContent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                 <Button
                         android:id="@+id/chooseImage"
@@ -95,6 +105,24 @@
                         android:text="@string/button_location"
                         android:textColor="@color/colorPrimary"
                         android:textSize="16sp"/>
+
+                <android.support.design.widget.TextInputEditText
+                        android:id="@+id/additionalNotes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:hint="@string/hint_hillfort_additional_notes"
+                        android:inputType="text"
+                        android:maxLength="500"
+                        android:maxLines="1"
+                        android:padding="8dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="14sp"/>
+
+                <TextView
+                        android:id="@+id/additionalNotesContent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                 <Button
                         android:id="@+id/btnAdd"
