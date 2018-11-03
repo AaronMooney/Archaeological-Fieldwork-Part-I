@@ -12,7 +12,7 @@
     <string name="hint_userPassword">Password</string>
     <string name="hint_confirmUserPassword">Confirm Password</string>
     <string name="hint_hillfort_additional_notes">Additional Notes</string>
-    <string name="menu_addHillfort">Add</string>
+    <string name="menu_addHillfort">Add New Hillfort</string>
     <string name="menu_cancelHillfort">Cancel</string>
     <string name="menu_deleteHillfort">Delete</string>
     <string name="menu_settings">Settings</string>
@@ -40,4 +40,6 @@
     <string name="total_hillforts" formatted="true">Total Hillforts: %1$s%%</string>
     <string name="number_visited" formatted="true">Number of Hillforts visited: %1$s%%</string>
     <string name="date_visited" formatted="true">Last Visited: %1$s%%</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

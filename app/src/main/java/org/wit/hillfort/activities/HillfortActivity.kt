@@ -35,7 +35,7 @@ class HillfortActivity : AppCompatActivity(), AnkoLogger, ImageListener {
         app = application as MainApp
         toolbarAdd.title = title
         setSupportActionBar(toolbarAdd)
-        getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val layoutManager = GridLayoutManager(this,2)
         imageGallery.layoutManager = layoutManager

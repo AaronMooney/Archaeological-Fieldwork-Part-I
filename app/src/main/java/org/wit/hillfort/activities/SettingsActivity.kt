@@ -29,7 +29,7 @@ class SettingsActivity: AppCompatActivity(), AnkoLogger {
 
         toolBarSettings.title = title
         setSupportActionBar(toolBarSettings)
-        getSupportActionBar()!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val currentUserName :TextView = findViewById(R.id.currentUser)
         val currentUserEmail: TextView = findViewById(R.id.currentUserEmail)
